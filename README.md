@@ -1,30 +1,6 @@
-# React + TypeScript + Vite
+# Excel as a data base
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Here I am experimenting with the use of excel as a database, and using google's APIs to make queries to it. 
+The reason why I am doing this is not out of novelty, but in an organisation that heavily uses excel reporting, I thought it would be a cool idea to create data visualisers that pull data from the google sheets that is regularly edited. Maybe even using google form to input data into the excel data base and then a website can call APIs to the google sheets to present the data in a dashboard of some sort.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

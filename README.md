@@ -1,9 +1,12 @@
 # Excel as a data base
 
-Here I am experimenting with the use of excel as a database, and using google's APIs to make queries to it. 
-The reason why I am doing this is not out of novelty, but in an organisation that heavily uses excel reporting, I thought it would be a cool idea to create data visualisers that pull data from the google sheets that is regularly edited. Maybe even using google form to input data into the excel data base and then a website can call APIs to the google sheets to present the data in a dashboard of some sort.
+This is a React/TypeScript project that is used as a proof of concept that you can use Google Sheets as a database and make queries to it to use the data for a dashboard UI. 
+The reason why I am doing this is not out of novelty, but in an organisation that heavily uses excel reporting, I thought it would be a cool idea to create data visualisers that pull data from the google sheets that are regularly edited. 
+
+Another continuation of this idea is that you could even use google form as a user friendly interface to input data into the excel data base. 
 
 It is based on this [YouTube Short](https://www.youtube.com/shorts/zkrVpleJIeI)
+
 I have summarised the steps below.
 
 ## How to create Google Sheets as a Database 

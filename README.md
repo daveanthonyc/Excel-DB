@@ -1,6 +1,7 @@
 # Excel as a data base
 
 This is a React/TypeScript project that is used as a proof of concept that you can use Google Sheets as a database and make queries to it to use the data for a dashboard UI. 
+the @Nivo/pie chart was used along with Material UI for the dashboard components.
 The reason why I am doing this is not out of novelty, but in an organisation that heavily uses excel reporting, I thought it would be a cool idea to create data visualisers that pull data from the google sheets that are regularly edited. 
 
 Another continuation of this idea is that you could even use google form as a user friendly interface to input data into the excel data base. 
@@ -28,3 +29,9 @@ function doGet() {
 7. Click "Deploy"
 8. Copy the "Web app" URL. This is the URL that you use to make fetch requests and receive the data as specified in our Apps Script code.
 9. Lastly, integrate into frontend by making a call using this Web app URL. E.g "const res = await fetch(*Web-app-url*)"
+
+# Installation
+1. `git clone git@github.com:daveanthonyc/Excel-DB.git`
+2. `cd Excel-DB`
+3. `npm install`
+4. Create .env file and create a variable named: VITE_GOOGLE_SHEET_WEB_APP_URL="**Your Web app URL from beforehand**"

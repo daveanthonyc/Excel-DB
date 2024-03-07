@@ -7,11 +7,24 @@ import { MayHaveLabel, ResponsivePie } from '@nivo/pie'
         "color": string,
     }
 
+    const colors = [
+            "#CBFEC0",
+            "#99FF89",
+            "#5DDB6C",
+            "#276B37",
+            "#FADE61",
+            "#FACB61",
+            "#FAB861",
+            "#FB6762",
+            "#D6DFF7"
+    ]
+
 const PieChart = ({ data }: { data: MayHaveLabel[] }) => {
     return (
         <ResponsivePie
             data={data}
-            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+            colors={colors}
+            margin={{ top: 50, right: 15, bottom: 50, left: 15 }}
             innerRadius={0.5}
             padAngle={0.7}
             cornerRadius={3}
@@ -43,27 +56,18 @@ const PieChart = ({ data }: { data: MayHaveLabel[] }) => {
             defs={[
                 {
                     id: 'dots',
-                    type: 'patternDots',
-                    background: 'inherit',
-                    color: 'rgba(255, 255, 255, 0.3)',
-                    size: 4,
-                    padding: 1,
-                    stagger: true
+                    color: 'rgba(0,0,0,0)',
                 },
                 {
                     id: 'lines',
-                    type: 'patternLines',
                     background: 'inherit',
                     color: 'rgba(255, 255, 255, 0.3)',
-                    rotation: -45,
-                    lineWidth: 6,
-                    spacing: 10
                 }
             ]}
             fill={[
                 {
                     match: {
-                        id: 'ruby'
+                        id: '7am-Offline'
                     },
                     id: 'dots'
                 },
@@ -108,31 +112,6 @@ const PieChart = ({ data }: { data: MayHaveLabel[] }) => {
                         id: 'javascript'
                     },
                     id: 'lines'
-                }
-            ]}
-            legends={[
-                {
-                    anchor: 'right',
-                    direction: 'column',
-                    justify: false,
-                    translateX: 0,
-                    translateY: 0,
-                    itemsSpacing: 0,
-                    itemWidth: 0,
-                    itemHeight: 30,
-                    itemTextColor: '#999',
-                    itemDirection: 'left-to-right',
-                    itemOpacity: 1,
-                    symbolSize: 18,
-                    symbolShape: 'circle',
-                    effects: [
-                        {
-                            on: 'hover',
-                            style: {
-                                itemTextColor: '#000'
-                            }
-                        }
-                    ]
                 }
             ]}
         />

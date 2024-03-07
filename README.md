@@ -20,3 +20,8 @@ function doGet() {
   return ContentService.createTextOutput(JSON.stringify({data: value})).setMimeType(ContentService.MimeType.JSON)
 }
 ```
+5. Click on "Deploy" drop down and click "New deployment"
+6. Add a description, Execute as "Me" and have "Only myself" for who can access the app  
+7. Click "Deploy"
+8. Copy the "Web app" URL. This is the URL that you use to make fetch requests and receive the data as specified in our Apps Script code.
+9. Lastly, integrate into frontend by making a call using this Web app URL. E.g "const res = await fetch(*Web-app-url*)"

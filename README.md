@@ -34,4 +34,5 @@ function doGet() {
 1. `git clone git@github.com:daveanthonyc/Excel-DB.git`
 2. `cd Excel-DB`
 3. `npm install`
-4. Create .env file and create a variable named: VITE_GOOGLE_SHEET_WEB_APP_URL="**Your Web app URL from beforehand**"
+4. Create .env file and create a variable named: 
+`VITE_GOOGLE_SHEET_WEB_APP_URL="**Your Web app URL from beforehand**"`

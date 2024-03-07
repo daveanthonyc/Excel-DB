@@ -1,24 +1,19 @@
 import { useEffect, useState } from "react";
 import { getData } from "./services/api-calls";
-import PieChart from "./components/PieChat";
+import PieChart,{ Data } from "./components/PieChat";
 import "./App.css";
-import {CircularProgress, Box, Typography, Toolbar, AppBar, Avatar, Stack, getToolbarUtilityClass } from "@mui/material"
+import {CircularProgress, Box, Typography, Toolbar, AppBar, Avatar, Stack } from "@mui/material"
 
 function App() {
-
-    type Data = {
-        "id": string,
-        "label": string,
-        "value": number,
-        "color": string
-    }
 
     const [data, setData] = useState<Array<Data> | null>(null)
     const [offlinePercent, setOfflinePercent] = useState<number | null>(null);
 
+    type FetchedData<T> = Array<T>;
+
     useEffect(() => {
         const fetchData = async () => {
-            const res = await getData();
+            const res: FetchedData<string> = await getData();
             if (res) {
                 const adaptedData = adaptData(res);
                 console.log(adaptedData)
@@ -51,7 +46,7 @@ function App() {
         return Math.round(totalOfflineAttendees / totalAttendees * 100);
     }
 
-    const adaptData = (data: Array): Data[]  => {
+    const adaptData = (data: FetchedData<string>): Data[]  => {
         const attendanceTimes = {
             "7am-Online": 0,
             "12pm-Online": 0,
@@ -65,8 +60,10 @@ function App() {
             "TBA": 0
         }
 
+        type AttendanceTime = keyof typeof attendanceTimes;
+
         data.forEach((row) => {
-            attendanceTimes[row[1]]++;
+            attendanceTimes[row[1] as AttendanceTime]++;
         })
 
         const transformedArray = Object.entries(attendanceTimes).map(([key, value]) => (

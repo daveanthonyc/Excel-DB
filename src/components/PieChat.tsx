@@ -1,6 +1,13 @@
-import { ResponsivePie } from '@nivo/pie'
+import { MayHaveLabel, ResponsivePie } from '@nivo/pie'
 
-const PieChart = ({ data }) => {
+    export type Data = {
+        "id": string,
+        "label": string,
+        "value": number,
+        "color": string,
+    }
+
+const PieChart = ({ data }: { data: MayHaveLabel[] }) => {
     return (
         <ResponsivePie
             data={data}
